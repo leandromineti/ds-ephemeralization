@@ -12,98 +12,93 @@ The solution lies in the problem:
 
 > "To think is to forget differences, generalize, make abstractions." - Borges
 
-The deluge of techniques in Data Science can can cause some ~~despair~~ dizzines. Nonetheless, **most** of the problems with face as practitioners of the craft boil down to some basic concepts and rules of thumb. Buckminster Fuller coined the term ephemeralization to describe the ability to do *"more and more with less and less until eventually you can do everything with nothing"*. This repo is a trial in devising a minimilistic mental framework for dealing with a wide range of problems in Data Science.
+The deluge of techniques in Data Science can can cause some ~~despair~~ dizziness. Nonetheless, **most** of the problems we face as practitioners of the craft boil down to some basic concepts and rules of thumb. Buckminster Fuller coined the term ephemeralization to describe the ability to do *"more and more with less and less until eventually you can do everything with nothing"*. This repository is a trial in devising a minimilistic mental framework for dealing with a wide range of problems in Data Science.
 
 ![](ds-diagram.png)
 
-As a data scientist, your job is choosing the paths along the above flowchart.
+The four basic concerns of the data scientist are data wranling, feature engineering, modeling and reporting results. Let's focus our attention to the central ones: feature
+engineering and modeling. I will not dive into the tools you we use to accomplish these tasks, but some basic cloud
+infraestructure knowledge, [version control](https://git-scm.com/), [ssh](https://en.wikipedia.org/wiki/Secure_Shell), and a [programming language](https://www.python.org/)
+can get us pretty far.
 
-That said, The work done by the data scientist is **data-centric**. That means the data will dictate the path. Most of the time, you will work with 4 datatypes: 
-
-- Tables
-- Time series
-- Images
-- Text
-
-I won't delve into the tools you will use to accomplish these tasks, but some basic cloud infraestructure knowledge, [version control](https://git-scm.com/), [ssh](https://en.wikipedia.org/wiki/Secure_Shell), and a [programming language](https://www.python.org/) will get you pretty far.
+The data scientist's work is **data-centric**, it all starts and revolves around data. Our job is choosing the paths along the above flowchart,
+but we already know where to start: **look at the data type**. The majority of problems deal with one of 4 data types: **tables**; **time series**; **images** and **text**.
+Each data type has its own gamut of suitable feature engineering techniques. The feature engineering is the process of creating the best process representation with the available data.
 
 ## Feature engineering
 
-In order to best get the process being modeled, it is a hard problem. Highlighting informative relations. Removing noise. 
-
-The data comes from some process, the idea is to have the best possible data representation.
-
-
-The feature engineering process has a clear target: representing your data in a **numeric table without missing values**. That's it! But those are the exceptions, not the rule. Other concept to keep in mind is 
-[end-to-end learning](https://www.youtube.com/watch?v=ImUoubi_t7s). Some deep learning models are able to make good data representations themselves, killing two birds with
+Finding the best representation for a process is a hard task, but it usually comes down to highlighting informative relations and removing noise. Besides, the feature engineering process has a clear target: turning the raw data into a
+ **numeric table without missing values**. That's it! Other concept to keep in mind is that of [end-to-end learning](https://www.youtube.com/watch?v=ImUoubi_t7s). Some deep learning models are able to make good data representations themselves, killing two birds with
 one stone: feature engineering and modeling.
 
 ### Table
 
 The table is the most common data structure in data science. Even when you are working with the other data type you may have a data table at the end.
 
-- Missing values
-- Outliers
-- Categorical encoding
-- Dimensionality reduction
-    - Feature selection
-        - Filter
-        - Wrapper
-        - Embedded
-    - Feature extraction
-        - PCA
-        - t-SNE
+- Missing values.
+- Handling outliers.
+- Categorical encoding.
+- Dimensionality reduction.
+    - Feature selection.
+        - Filter.
+        - Wrapper.
+        - Embedded.
+    - Feature extraction.
+        - PCA.
+        - t-SNE.
+        - Autoencoder.
 
 ### Text
 
-- Bag-of-words.
-- Tf-idf.
-- Word embedding.
+Five steps:
+
+- Cleaning.
+- Tokenization.
+- Remove stop words.
+- Stemming or lemmatization.
+- Encoding:
+    - Bag-of-words.
+    - Tf-idf.
+    - Word embedding.
 
 ### Time series
 
-Missing values
+All time series models deal with autocorrelation in some way. The process of transforming the time series into a table revolves around creating the 
+following feature types:
+
+- Date-time features.
+- Lag features.
+- Window features: 
+    - Rolling window statistics.
+    - Expanding window statistcs.
+
+Missing values imputation:
+- Last Observation Carried Forward (LOCF).
+- Next Observation Carried Backward (NOCB).
+- Linear interpolation.
+- Seasonal Adjustment + Linear Interpolation.
 
 ### Image
 
-Not really transformed into a table nowadays. Some preprocessing and feeding it to a deep learning model.
+*To do*.
 
 ## Modeling
 
 > "All model are wrong, but some are useful." - George Box
 
-You are not looking for the right model, you are looking for a useful one. Ok, let's begin at the end, before exploring the models define your metric. Almost certainly, your 
-project will fall into one of three categories: classification; regression and clustering. Each one of them has its 
-
-Start with the easier part and stick with it. The evaluation metric is dictated by the type of problem you are dealing with:
+Before exploring the models, let's define our metric. Almost certainly, the project will fall into one of two categories: classification or regression. There are many
+[metrics](https://scikit-learn.org/stable/modules/model_evaluation.html) to choose from, but the usual suspects are:
 
 - **Classification**
-    - Binary: recall; precision; F1-Score; AUC.
-    - Multilabel: 
-- **Regression**: MAE; RMSE; 
-- **Clustering**: hard problem.
+    - Binary: [recall](https://en.wikipedia.org/wiki/Precision_and_recall); [precision](https://en.wikipedia.org/wiki/Precision_and_recall); [F1-Score](https://en.wikipedia.org/wiki/F1_score); [AUC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic).
+    - Multilabel: micro and macro averaging of the above-mentioned metrics. Other approach is transforming the multilabel into a binary problem (one-vs-all or one-vs-one). 
+- **Regression**: some sort of agreggation around the error, like [MAE](https://en.wikipedia.org/wiki/Mean_absolute_error) or [RMSE](https://en.wikipedia.org/wiki/Root-mean-square_deviation).
 
-Unless it's strictly necessary, **do not change your evaluation metric during the project**. Well, so far so good. The data guided my feature engineering process, the problem 
-told me which metric I should use. What about the model? Bad news...
+One last point about it, unless it's strictly necessary, **do not change the evaluation metric during the project**. So far, so good: the data guided the feature engineering process, the problem told me which metric I should use. What about the model? Bad news, there is no right model. The silver lining is that we are not looking for the right model, we are looking for a useful one.
 
-You only improve what you already do. Start with the basics and move from there.
+Choosing the model for a phenomenom is like opening a [Pandora's box](https://leandromineti.github.io/ml-knowledge-graph/). The rule of thumb here is: start with the basics and move from there. Linear and logistic regression are two good starting candidates. While assessing many different models, and [combinations of them](https://mlwave.com/kaggle-ensembling-guide/), keep two concepts in mind:
 
-Choosing the right model for a phenomenom is like opening a [Pandora's box](https://leandromineti.github.io/ml-knowledge-graph/). We only improve what we already have. Start 
-with a basic model you understand as fast as you can an move from there. While assessing many different models, and [combinations of them](https://mlwave.com/kaggle-ensembling-guide/), keep two concepts in mind:
+- **Interpretation or acuracy?**: if you need to explain the predictions of your model, you may want to avoid the more complex ones. 
+- **Computational resources**: the hardware available for development and deployment will set some limits on the models you should try.
 
-- **Interpretation or acuracy?**
-- **Computational resources**
-    - Development: batch processing. Larger than memory. Spark. GPUs for deep learning, etc.
-    - Deployment: the model will probably be deployed as an API and/or embedded in some form of ETL pipeline. Complex models tend to need a large amount of resources turning 
-    the usage of the model technically or economically unfeasable.
-- **Data**: mais pontos; mais features.
-- **Model**: modelo mais flexível ou menos flexível.
-
-### Assessing results and moving forward
-
-[Evaluation and validation curves](https://scikit-learn.org/stable/modules/learning_curve.html)
-
-## Resources
-
-- feature engineering books
-- Machine Learning Yearning.
+Now we are good to go. **Where is the data?**
