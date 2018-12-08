@@ -16,7 +16,7 @@ The deluge of techniques in Data Science can can cause some ~~despair~~ dizzines
 
 ![](ds-diagram.png)
 
-The four basic concerns of the data scientist are data wrangling, feature engineering, modeling and reporting results. Let's focus our attention to the central ones: feature
+The four basic concerns of the data scientist are data wrangling, feature engineering, modeling and reporting results. Let's focus our attention on the central ones: feature
 engineering and modeling. I will not dive into the tools you we use to accomplish these tasks, but some basic cloud
 infraestructure knowledge, [version control](https://git-scm.com/), [ssh](https://en.wikipedia.org/wiki/Secure_Shell), and a [programming language](https://www.python.org/)
 can get us pretty far.
