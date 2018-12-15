@@ -1,5 +1,7 @@
 # Data Science Ephemeralization
 
+<img src="cover.jpg" alt="drawing" width="100%"/>
+
 ## TLDR
 
 The solution lies in the problem:
@@ -29,54 +31,66 @@ Each data type has its own gamut of suitable feature engineering techniques. The
 
 Finding the best representation for a process is a hard task, but it usually comes down to highlighting informative relations and removing noise. Besides, the feature engineering process has a clear target: turning the raw data into a
  **numeric table without missing values**. That's it! Other concept to keep in mind is that of [end-to-end learning](https://www.youtube.com/watch?v=ImUoubi_t7s). Some deep learning models are able to make good data representations themselves, killing two birds with
-one stone: feature engineering and modeling.
+one stone: feature engineering and modeling. Now, let's check out some techniques:
 
 ### Table
 
-The table is the most common data structure in data science. Even when you are working with the other data type you may have a data table at the end.
+The table is the most common data structure in data science. Even when you are working with the other data type you may have a data table at the end. Your 4 main concerns are:
 
-- Missing values.
-- Handling outliers.
-- Categorical encoding.
-- Dimensionality reduction.
-    - Feature selection.
+- **Missing values**: when facing missing values you can either delete them, and lose information, or impute them **carefully**!
+    - Deletion:
+        - Listwise.
+        - Pairwise.
+        - Columns.
+    - Imputation:
+        - Categorical: mode; use NA as a level; logistic or multinomial regression with other variables; multiple imputation.
+        - Continuous: mean, median, mode; regression; multiple imputation.
+- **Outliers**.
+- **Categorical encoding**: depends on the number of categories present in a variable (*cardinality*):
+    - Low cardinality: one-hot encoding.
+    - High cardinality: hashing; bucketing; embeddings.
+    - Ciclic variables: circular encoding.
+- **Dimensionality reduction**:
+    - Feature selection:
         - Filter.
         - Wrapper.
         - Embedded.
-    - Feature extraction.
-        - PCA.
-        - t-SNE.
-        - Autoencoder.
+    - Feature extraction:
+        - Linear: [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis).
+        - Non-linear: [t-SNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding); [UMAP](https://arxiv.org/abs/1802.03426); [autoencoder](https://en.wikipedia.org/wiki/Autoencoder).
 
 ### Text
 
-Five steps:
+The feature engineering on text is usually done in five steps:
 
-- Cleaning.
-- Tokenization.
-- Remove stop words.
-- Stemming or lemmatization.
-- Encoding:
-    - Bag-of-words.
-    - Tf-idf.
-    - Word embedding.
+- **Cleaning**: removing unused characters, spaces and punctuation.
+- **Tokenization**: separate the text into information units, usually words.
+- **Remove stop words**: remove frequent and usuless words.
+- **Stemming** or **lemmatization**: both aim to reduce inflexional forms. In other words, they try to reduce words to its morphological root.
+- **Encoding**: after the aforementioned steps you have a list of words. The enconding is where you transform it into a data table.
+    - [Bag-of-words](https://en.wikipedia.org/wiki/Bag-of-words_model).
+    - [Tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
+    - [Word embedding](https://en.wikipedia.org/wiki/Word_embedding).
+
+After this process you will have a data table. Now you can still apply all those techniques used on tables.
 
 ### Time series
 
-All time series models deal with autocorrelation in some way. The process of transforming the time series into a table revolves around creating the 
-following feature types:
+With time series you have two concerns: missing values and creating features to represent the series as a table:
 
-- Date-time features.
-- Lag features.
-- Window features: 
-    - Rolling window statistics.
-    - Expanding window statistcs.
+- **Missing values**: contraty to tables, deletion is not really an option here. Besides, imputation here has some particularities:
+    - Last Observation Carried Forward (LOCF).
+    - Next Observation Carried Backward (NOCB).
+    - Linear interpolation.
+    - Seasonal Adjustment + Linear Interpolation.
+- **Encoding**:
+    - Lag features: all time series models deal with autocorrelation in some way. 
+    - Date-time features.
+    - Window features:
+        - Rolling window statistics.
+        - Expanding window statistcs.
 
-Missing values imputation:
-- Last Observation Carried Forward (LOCF).
-- Next Observation Carried Backward (NOCB).
-- Linear interpolation.
-- Seasonal Adjustment + Linear Interpolation.
+Again, having a data table at the end, you can still apply all those techniques used on tables.
 
 ### Image
 
@@ -102,3 +116,12 @@ Choosing the model for a phenomenom is like opening a [Pandora's box](https://le
 - **Computational resources**: the hardware available for development and deployment will set some limits on the models you should try.
 
 Now we are good to go. **Where is the data?**
+
+### References
+
+- Albon, C. (2018). Machine learning with Python cookbook: practical solutions from preprocessing to deep learning (First edition). Sebastopol, CA: O’Reilly Media.
+- Kuhn, M., & Johnson, K. (2013). Applied predictive modeling (Vol. 26). New York: Springer.
+- Swalin, A. (2018, January 31). How to Handle Missing Data. Retrieved December 15, 2018, from https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4
+- Zheng, A., & Casari, A. (2018). Feature engineering for machine learning: principles and techniques for data scientists (First edition). Beijing : Boston: O’Reilly.
+
+- **Cover image**: adapted from Herbert Matter | Buckminster Fuller | 1970 | Edward Cella. (n.d.). Retrieved December 15, 2018, from https://edwardcella.com/exhibition/153/exhibition_works/3597
