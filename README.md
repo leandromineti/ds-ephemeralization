@@ -121,8 +121,8 @@ Choosing the model for a phenomenom is like opening a [Pandora's box](https://le
 As ~~data~~ scientists we have an Aristotelian urge to classify things. If 
 that is your thing, good news! There are a lot of labels you can attach to 
 modeling techniques: generative, discriminative, parametric, nonparametric, 
-semiparametric, bayesian *et al*. When choosing your path here I advise 
-following Vapnik's advice favoring discriminative models: "When solving a problem of interest, do not solve a more general problem as an intermediate step.".
+semiparametric, bayesian *et al*. When choosing your path here, I advise 
+following Vapnik's advice favoring discriminative models: "when solving a problem of interest, do not solve a more general problem as an intermediate step.".
 
 The choice between the parametric and nonparametric will be based on 
 your need for interpretability and/or prediction power and the available
