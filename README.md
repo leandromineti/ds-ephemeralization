@@ -124,7 +124,6 @@ following Vapnik's advice favoring discriminative models: "*when solving a probl
 
 ![](img/model-compass.png)
 
-
 The choice between the parametric and nonparametric will be based on 
 your need for interpretability and/or prediction power and the available
 hardware. Technicalities aside, the golden rule in modeling is: **build a basic model as fast as you can and move from there**. You can only improve what you already have!
