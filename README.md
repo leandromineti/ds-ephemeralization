@@ -120,7 +120,7 @@ As ~~data~~ scientists we have an Aristotelian urge to classify things. If
 that is your thing, good news! There are a lot of labels you can attach to 
 modeling techniques: generative, discriminative, parametric, nonparametric, 
 semiparametric, bayesian *et al*. When choosing your path here, I advise 
-following Vapnik's advice favoring discriminative models: "when solving a problem of interest, do not solve a more general problem as an intermediate step.".
+following Vapnik's advice favoring discriminative models: "*when solving a problem of interest, do not solve a more general problem as an intermediate step.*".
 
 ![](img/model-compass.png)
 
