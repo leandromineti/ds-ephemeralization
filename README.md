@@ -1,6 +1,6 @@
 # Data Science Ephemeralization
 
-<img src="cover.jpg" alt="drawing" width="100%"/>
+<img src="img/cover.jpg" alt="drawing" width="100%"/>
 
 ## TLDR
 
@@ -16,7 +16,7 @@ The solution lies in the problem:
 
 The deluge of techniques in Data Science can can cause some ~~despair~~ dizziness. Nonetheless, **most** of the problems we face as practitioners of the craft boil down to some basic concepts and rules of thumb. Buckminster Fuller coined the term ephemeralization to describe the ability to do *"more and more with less and less until eventually you can do everything with nothing"*. This repository is a trial in devising a minimilistic mental framework for dealing with a wide range of problems in Data Science.
 
-![](ds-diagram.png)
+![](img/ds-diagram.png)
 
 The four basic concerns of the data scientist are data wrangling, feature engineering, modeling and reporting results. Let's focus our attention on the central ones: feature
 engineering and modeling. I will not dive into the tools you we use to accomplish these tasks, but some basic cloud
@@ -110,10 +110,23 @@ Before exploring the models, let's define our metric. Almost certainly, the proj
 
 One last point about it, unless it's strictly necessary, **do not change the evaluation metric during the project**. So far, so good: the data guided the feature engineering process, the problem told me which metric I should use. What about the model? Bad news, there is no right model. The silver lining is that we are not looking for the right model, we are looking for a useful one.
 
-Choosing the model for a phenomenom is like opening a [Pandora's box](https://leandromineti.github.io/ml-knowledge-graph/). The rule of thumb here is: start with the basics and move from there. Linear and logistic regression are two good starting candidates. While assessing many different models, and [combinations of them](https://mlwave.com/kaggle-ensembling-guide/), keep two concepts in mind:
+Choosing the model for a phenomenom is like opening a [Pandora's box](https://leandromineti.github.io/ml-knowledge-graph/). The rule of thumb here is: start with the basics and move from there. Linear and logistic regression are two good starting candidates. While assessing many different models, and [combinations of them](https://mlwave.com/kaggle-ensembling-guide/), keep three concepts in mind:
 
 - **Interpretation or acuracy?**: if you need to explain the predictions of your model, you may want to avoid the more complex ones. 
 - **Computational resources**: the hardware available for development and deployment will set some limits on the models you should try.
+- **How much data do you have?**: some models require a fair amount of training data to perform well.
+
+![](img/model-compass.png)
+
+As ~~data~~ scientists we have an Aristotelian urge to classify things. If 
+that is your thing, good news! There are a lot of labels you can attach to 
+modeling techniques: generative, discriminative, parametric, nonparametric, 
+semiparametric, bayesian *et al*. When choosing your path here I advise 
+following Vapnik's advice favoring discriminative models: "When solving a problem of interest, do not solve a more general problem as an intermediate step.".
+
+The choice between the parametric and nonparametric will be based on 
+your need for interpretability and/or prediction power and the available
+hardware. Technicalities aside, the golden rule in modeling is: **build a basic model as fast as you can and move from there**. You can only improve what you already have!
 
 Now we are good to go. **Where is the data?**
 
