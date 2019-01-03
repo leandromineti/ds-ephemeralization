@@ -16,7 +16,7 @@ The solution lies in the problem:
 
 The deluge of techniques in Data Science can can cause some ~~despair~~ dizziness. Nonetheless, **most** of the problems we face as practitioners of the craft boil down to some basic concepts and rules of thumb. Buckminster Fuller coined the term ephemeralization to describe the ability to do *"more and more with less and less until eventually you can do everything with nothing"*. This repository is a trial in devising a minimilistic mental framework for dealing with a wide range of problems in Data Science.
 
-![](img/ds-diagram.png)
+![ds-diagram](img/ds-diagram.png)
 
 The four basic concerns of the data scientist are data wrangling, feature engineering, modeling and reporting results. Let's focus our attention on the central ones: feature
 engineering and modeling. I will not dive into the tools you we use to accomplish these tasks, but some basic cloud
@@ -110,8 +110,6 @@ Before exploring the models, let's define our metric. Almost certainly, the proj
 
 One last point about it, unless it's strictly necessary, **do not change the evaluation metric during the project**. So far, so good: the data guided the feature engineering process, the problem told me which metric I should use. What about the model? Bad news, there is no right model. The silver lining is that we are not looking for the right model, we are looking for a useful one.
 
-![model-treachery](img/the-treachery-of-models.png)
-
 Choosing the model for a phenomenom is like opening a [Pandora's box](https://leandromineti.github.io/ml-knowledge-graph/). The rule of thumb here is: start with the basics and move from there. Linear and logistic regression are two good starting candidates. While assessing many different models, and [combinations of them](https://mlwave.com/kaggle-ensembling-guide/), keep three concepts in mind:
 
 - **Interpretation or acuracy?**: if you need to explain the predictions of your model, you may want to avoid the more complex ones. 
@@ -139,5 +137,3 @@ Now we are good to go. **Where is the data?**
 - Zheng, A., & Casari, A. (2018). Feature engineering for machine learning: principles and techniques for data scientists (First edition). Beijing : Boston: O’Reilly.
 
 - **Cover image**: adapted from Herbert Matter | Buckminster Fuller | 1970 | Edward Cella. (n.d.). Retrieved December 15, 2018, from https://edwardcella.com/exhibition/153/exhibition_works/3597
-
-- **"The Treachery of Models" image**: adapted from Magritte, René. "The Treachery of Images." Oil on canvas 231, no. 2 (1928): 1928-29.
