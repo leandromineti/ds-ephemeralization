@@ -110,6 +110,8 @@ Before exploring the models, let's define our metric. Almost certainly, the proj
 
 One last point about it, unless it's strictly necessary, **do not change the evaluation metric during the project**. So far, so good: the data guided the feature engineering process, the problem told me which metric I should use. What about the model? Bad news, there is no right model. The silver lining is that we are not looking for the right model, we are looking for a useful one.
 
+![model-treachery](img/the-treachery-of-models.png)
+
 Choosing the model for a phenomenom is like opening a [Pandora's box](https://leandromineti.github.io/ml-knowledge-graph/). The rule of thumb here is: start with the basics and move from there. Linear and logistic regression are two good starting candidates. While assessing many different models, and [combinations of them](https://mlwave.com/kaggle-ensembling-guide/), keep three concepts in mind:
 
 - **Interpretation or acuracy?**: if you need to explain the predictions of your model, you may want to avoid the more complex ones. 
@@ -121,7 +123,7 @@ that is your thing, good news! There are a lot of labels you can attach to
 modeling techniques: generative, discriminative, parametric, nonparametric, 
 semiparametric, bayesian *et al*. When choosing your path here, remember Vapnik's advice favoring discriminative models: "*when solving a problem of interest, do not solve a more general problem as an intermediate step.*".
 
-![](img/model-compass.png)
+![model-compass](img/model-compass.png)
 
 The choice between the parametric and nonparametric will be based on 
 your need for interpretability and/or prediction power and the available
