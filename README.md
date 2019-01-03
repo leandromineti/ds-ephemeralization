@@ -139,3 +139,5 @@ Now we are good to go. **Where is the data?**
 - Zheng, A., & Casari, A. (2018). Feature engineering for machine learning: principles and techniques for data scientists (First edition). Beijing : Boston: O’Reilly.
 
 - **Cover image**: adapted from Herbert Matter | Buckminster Fuller | 1970 | Edward Cella. (n.d.). Retrieved December 15, 2018, from https://edwardcella.com/exhibition/153/exhibition_works/3597
+
+- **"The Treachery of Models" image**: adapted from Magritte, René. "The Treachery of Images." Oil on canvas 231, no. 2 (1928): 1928-29.
