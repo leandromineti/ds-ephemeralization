@@ -116,7 +116,7 @@ Choosing the model for a phenomenom is like opening a [Pandora's box](https://le
 - **Computational resources**: the hardware available for development and deployment will set some limits on the models you should try.
 - **How much data do you have?**: some models require a fair amount of training data to perform well.
 
-As ~~data~~ scientists, we have an Aristotelian urge to classify things. If 
+As ~~data~~ scientists, we have an Aristotelian urge to classify stuff. If 
 that is your thing, good news! There are a lot of labels you can attach to 
 modeling techniques: generative, discriminative, parametric, nonparametric, 
 semiparametric, bayesian *et al*. When choosing your path here, remember Vapnik's advice favoring discriminative models: "*when solving a problem of interest, do not solve a more general problem as an intermediate step.*".
@@ -125,7 +125,7 @@ semiparametric, bayesian *et al*. When choosing your path here, remember Vapnik'
 
 The choice between the parametric and nonparametric will be based on 
 your need for interpretability and/or prediction power and the available
-hardware. Technicalities aside, the golden rule in modeling is: **build a basic model as fast as you can and move from there**. You can only improve what you already have!
+hardware. Technicalities aside, the golden rule in modeling is: **build a basic model as fast as you can and move from there**. You can only improve what you already have! Furthermore, the usual experience from data scientists is that the [Pareto principle](https://simplystatistics.org/2014/03/20/the-8020-rule-of-statistical-methods-development/) applies here: you can achieve 80% of the final results with 20% of the effort.
 
 Now we are good to go. **Where is the data?**
 
