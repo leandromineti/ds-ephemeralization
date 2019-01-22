@@ -7,7 +7,7 @@
 The solution lies in the problem:
 
 - The data will tell you how to do feature engineering.
-- The problem will tell you which metrics to use, choose one and stick with it.
+- The response variable will tell you which metrics to use, choose one and stick with it.
 - Nobody will tell you which model to use, build a basic one as fast as you can and move from there.
 
 ## Introduction
@@ -24,7 +24,7 @@ infraestructure knowledge, [version control](https://git-scm.com/), [ssh](https:
 can get us pretty far.
 
 The data scientist's work is **data-centric**, it all starts and revolves around data. Our job is choosing the paths along the above flowchart,
-but we already know where to start: **look at the data type**. The majority of problems deal with one of 4 data types: **tables**; **time series**; **images** and **text**.
+but we already know where to start: **look at the data type**. The majority of problems deal with one of 5 data types: **tables**; **time series**; **images**;**text** and **graphs**.
 Each data type has its own gamut of suitable feature engineering techniques. The feature engineering is the process of creating the best process representation with the available data.
 
 ## Feature engineering
@@ -52,9 +52,9 @@ The table is the most common data structure in data science. Even when you are w
     - Ciclic variables: circular encoding.
 - **Dimensionality reduction**:
     - Feature selection:
-        - Filter.
-        - Wrapper.
-        - Embedded.
+        - Filter: based on the statistical properties of each available feature and its relation to the response variable.
+        - Wrapper: based on the statistical properties of feature subsets and its relation to the response variable.
+        - Embedded: features are selected by some form of the regularization on the model, e.g. [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)).
     - Feature extraction:
         - Linear: [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis).
         - Non-linear: [t-SNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding); [UMAP](https://arxiv.org/abs/1802.03426); [autoencoder](https://en.wikipedia.org/wiki/Autoencoder).
@@ -96,25 +96,60 @@ Again, having a data table at the end, you can still apply all those techniques 
 
 *To do*.
 
+### Graph
+
+> *To do*.
+
+###
+
 ## Modeling
 
 > "All model are wrong, but some are useful." - George Box
 
-Before exploring the models, let's define our metric. Almost certainly, the project will fall into one of two categories: classification or regression. There are many
-[metrics](https://scikit-learn.org/stable/modules/model_evaluation.html) to choose from, but the usual suspects are:
+Choosing the model for a phenomenom is like opening a [Pandora's box](https://leandromineti.github.io/ml-knowledge-graph/). The rule of thumb here is: start with the basics and move from there. Linear and logistic regression are two good starting candidates. While assessing many different models, and [combinations of them](https://mlwave.com/kaggle-ensembling-guide/), keep 4 things in mind: **model complexity**; **model perfomance**; **computational cost** and **model interpretability**.
+
+The relationship between the above concepts can be very complicated. As a rule of thumb: when the model complexity increases, the model performance and computational cost increase and the model interpretability decreases; when the model complexity decreases, the model perfomance and computational cost descreases and the interpretability increases.
+
+![model-complexity](img/model-complexity.png)
+
+If feature engineering is all about data types, modeling is all about the response variable. Most projects will fall into one of two categories: if the response variable is a scalar, you have **regression** problem, if it is a category, you have a **classification** problem. The first step when modeling is defining your metric, and the response variable will guide you here. There are many [metrics](https://scikit-learn.org/stable/modules/model_evaluation.html) to choose from, but the usual suspects are:
 
 - **Classification**
     - Binary: [recall](https://en.wikipedia.org/wiki/Precision_and_recall); [precision](https://en.wikipedia.org/wiki/Precision_and_recall); [F1-Score](https://en.wikipedia.org/wiki/F1_score); [AUC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic).
     - Multilabel: micro and macro averaging of the above-mentioned metrics. Other approach is transforming the multilabel into a binary problem (one-vs-all or one-vs-one). 
 - **Regression**: some sort of agreggation around the error, like [MAE](https://en.wikipedia.org/wiki/Mean_absolute_error) or [RMSE](https://en.wikipedia.org/wiki/Root-mean-square_deviation).
 
-One last point about it, unless it's strictly necessary, **do not change the evaluation metric during the project**. So far, so good: the data guided the feature engineering process, the problem told me which metric I should use. What about the model? Bad news, there is no right model. The silver lining is that we are not looking for the right model, we are looking for a useful one.
+One last point evaluation metrics, unless it's strictly necessary, **do not change the evaluation metric during the project**. So far, so good: the data guided the feature engineering process, the response variable told me which metric I should use. What about the model? Bad news, there is no right model. The silver lining is that we are not looking for the right model, we are looking for a useful one. We will consider a model to be useful when it has the best possible predictive
+power.
 
-Choosing the model for a phenomenom is like opening a [Pandora's box](https://leandromineti.github.io/ml-knowledge-graph/). The rule of thumb here is: start with the basics and move from there. Linear and logistic regression are two good starting candidates. While assessing many different models, and [combinations of them](https://mlwave.com/kaggle-ensembling-guide/), keep three concepts in mind:
+### Model complexity and performance
 
-- **Interpretation or acuracy?**: if you need to explain the predictions of your model, you may want to avoid the more complex ones. 
-- **Computational resources**: the hardware available for development and deployment will set some limits on the models you should try.
-- **How much data do you have?**: some models require a fair amount of training data to perform well.
+> *To do*
+
+When assessing model perfomance, explore: **overfitting/underfitting** and **data availabitility**.
+
+### Model complexity and computational resources
+
+> *To do*
+
+The computational resources are key in two different steps of modeling: **training** and **deployment**.
+
+### Model complexity and interpretation
+
+> "Explanations exist; they have existed for all time; there is always a well-known solution to every human problem — neat, plausible, and wrong." - H. L. Mencken.
+
+> *Todo*
+
+The interpretation of models can follow two paths: **direct assessment of model parameters** or **secondary assessment**.
+
+One last caveat about explanations, a model will always be a simplification of reality. This
+simplification is both the power and weakness of models. When interrogating your model for 
+explanations, remember you are get information about what the model 'understands' of the phenomenom, not the phenomenon itself. Keep this in mind to avoid overarching conclusions based
+on shaky premises: *the treachery of models*.
+
+![The Treachery of Models](img/the-treachery-of-models.png)
+
+### Final remarks
 
 As ~~data~~ scientists, we have an Aristotelian urge to classify stuff. If 
 that is your thing, good news! There are a lot of labels you can attach to 
@@ -124,16 +159,16 @@ semiparametric, bayesian *et al*. When choosing your path here, remember Vapnik'
 ![model-compass](img/model-compass.png)
 
 The choice between the parametric and nonparametric will be based on 
-your need for interpretability and/or prediction power and the available
+your need for interpretability; model performance and/or available
 hardware. Technicalities aside, the golden rule in modeling is: **build a basic model as fast as you can and move from there**. You can only improve what you already have! Furthermore, the usual experience from data scientists is that the [Pareto principle](https://simplystatistics.org/2014/03/20/the-8020-rule-of-statistical-methods-development/) applies here: you can achieve 80% of the final results with 20% of the effort.
 
 Now we are good to go. **Where is the data?**
 
-### References
+## References
 
 - Albon, C. (2018). Machine learning with Python cookbook: practical solutions from preprocessing to deep learning (First edition). Sebastopol, CA: O’Reilly Media.
 - Kuhn, M., & Johnson, K. (2013). Applied predictive modeling (Vol. 26). New York: Springer.
 - Swalin, A. (2018, January 31). How to Handle Missing Data. Retrieved December 15, 2018, from https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4
 - Zheng, A., & Casari, A. (2018). Feature engineering for machine learning: principles and techniques for data scientists (First edition). Beijing : Boston: O’Reilly.
-
+- "The Treachery of Models" adapted from Magritte, René. "The Treachery of Images." Oil on canvas 231, no. 2 (1928): 1928-29.
 - **Cover image**: adapted from Herbert Matter | Buckminster Fuller | 1970 | Edward Cella. (n.d.). Retrieved December 15, 2018, from https://edwardcella.com/exhibition/153/exhibition_works/3597
