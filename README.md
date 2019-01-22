@@ -108,7 +108,7 @@ Again, having a data table at the end, you can still apply all those techniques 
 
 Choosing the model for a phenomenom is like opening a [Pandora's box](https://leandromineti.github.io/ml-knowledge-graph/). The rule of thumb here is: start with the basics and move from there. Linear and logistic regression are two good starting candidates. While assessing many different models, and [combinations of them](https://mlwave.com/kaggle-ensembling-guide/), keep 4 things in mind: **model complexity**; **model perfomance**; **computational cost** and **model interpretability**.
 
-The relationship between the above concepts can be very complicated. As a rule of thumb: when the model complexity increases, the model performance and computational cost increase and the model interpretability decreases; when the model complexity decreases, the model perfomance and computational cost descreases and the interpretability increases.
+The relationship between the above concepts can be very complicated. As a rule of thumb: when the model complexity increases, the model performance and computational cost increase, and the model interpretability decreases; when the model complexity decreases, the model performance and computational cost decrease, and the interpretability increases.
 
 ![model-complexity](img/model-complexity.png)
 
@@ -138,13 +138,13 @@ The computational resources are key in two different steps of modeling: **traini
 
 > "Explanations exist; they have existed for all time; there is always a well-known solution to every human problem — neat, plausible, and wrong." - H. L. Mencken.
 
-> *Todo*
+> *To do*
 
 The interpretation of models can follow two paths: **direct assessment of model parameters** or **secondary assessment**.
 
 One last caveat about explanations, a model will always be a simplification of reality. This
 simplification is both the power and weakness of models. When interrogating your model for 
-explanations, remember you are get information about what the model 'understands' of the phenomenom, not the phenomenon itself. Keep this in mind to avoid overarching conclusions based
+explanations, remember you get information about what the model 'understands' of the phenomenon, not the phenomenon itself. Keep this in mind to avoid overarching conclusions based
 on shaky premises: *the treachery of models*.
 
 ![The Treachery of Models](img/the-treachery-of-models.png)
