@@ -94,7 +94,7 @@ Again, having a data table at the end, you can still apply all those techniques 
 
 ### Image
 
-*To do*.
+> *To do*.
 
 ### Graph
 
@@ -153,10 +153,8 @@ on shaky premises: *the treachery of models*.
 
 As ~~data~~ scientists, we have an Aristotelian urge to classify stuff. If 
 that is your thing, good news! There are a lot of labels you can attach to 
-modeling techniques: generative, discriminative, parametric, nonparametric, 
-semiparametric, bayesian *et al*. When choosing your path here, remember Vapnik's advice favoring discriminative models: "*when solving a problem of interest, do not solve a more general problem as an intermediate step.*".
-
-![model-compass](img/model-compass.png)
+modeling techniques: [generative](https://en.wikipedia.org/wiki/Generative_model), [discriminative](https://en.wikipedia.org/wiki/Discriminative_model), [parametric](https://en.wikipedia.org/wiki/Parametric_model), [nonparametric](https://en.wikipedia.org/wiki/Nonparametric_statistics), 
+[semiparametric](https://en.wikipedia.org/wiki/Semiparametric_model), [bayesian](https://en.wikipedia.org/wiki/Bayesian_statistics) *et al*. When choosing your path here, remember Vapnik's advice favoring discriminative models: "*when solving a problem of interest, do not solve a more general problem as an intermediate step.*".
 
 The choice between the parametric and nonparametric will be based on 
 your need for interpretability; model performance and/or available
