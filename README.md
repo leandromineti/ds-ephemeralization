@@ -145,9 +145,7 @@ The interpretation of models can follow two paths: **direct assessment of model 
 One last caveat about explanations, a model will always be a simplification of reality. This
 simplification is both the power and weakness of models. When interrogating your model for 
 explanations, remember you get information about what the model 'understands' of the phenomenon, not the phenomenon itself. Keep this in mind to avoid overarching conclusions based
-on shaky premises: *the treachery of models*.
-
-![The Treachery of Models](img/the-treachery-of-models.png)
+on shaky premises.
 
 ### Final remarks
 
