@@ -19,13 +19,13 @@ The deluge of techniques in Data Science can can cause some ~~despair~~ dizzines
 ![ds-diagram](img/ds-diagram.png)
 
 The four basic concerns of the data scientist are data wrangling, feature engineering, modeling and reporting results. Let's focus our attention on the central ones: feature
-engineering and modeling. I will not dive into the tools you we use to accomplish these tasks, but some basic cloud
+engineering and modeling. I will not dive into the tools we use to accomplish these tasks, but some basic cloud
 infraestructure knowledge, [version control](https://git-scm.com/), [ssh](https://en.wikipedia.org/wiki/Secure_Shell), and a [programming language](https://www.python.org/)
 can get us pretty far.
 
 The data scientist's work is **data-centric**, it all starts and revolves around data. Our job is choosing the paths along the above flowchart,
-but we already know where to start: **look at the data type**. The majority of problems deal with one of 5 data types: **tables**; **time series**; **images**;**text** and **graphs**.
-Each data type has its own gamut of suitable feature engineering techniques. The feature engineering is the process of creating the best process representation with the available data.
+but we already know where to start: **look at the data type**. The majority of problems deal with one of 5 data types: **tables**; **time series**; **images**; **text** and **graphs**.
+Each data type has its own gamut of suitable feature engineering techniques. Feature engineering is the process of creating the best process representation with the available data.
 
 ## Feature engineering
 
