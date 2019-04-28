@@ -152,11 +152,7 @@ on shaky premises.
 As ~~data~~ scientists, we have an Aristotelian urge to classify stuff. If 
 that is your thing, good news! There are a lot of labels you can attach to 
 modeling techniques: [generative](https://en.wikipedia.org/wiki/Generative_model), [discriminative](https://en.wikipedia.org/wiki/Discriminative_model), [parametric](https://en.wikipedia.org/wiki/Parametric_model), [nonparametric](https://en.wikipedia.org/wiki/Nonparametric_statistics), 
-[semiparametric](https://en.wikipedia.org/wiki/Semiparametric_model), [bayesian](https://en.wikipedia.org/wiki/Bayesian_statistics) *et al*. When choosing your path here, remember Vapnik's advice favoring discriminative models: "*when solving a problem of interest, do not solve a more general problem as an intermediate step.*".
-
-The choice between the parametric and nonparametric will be based on 
-your need for interpretability; model performance and/or available
-hardware. Technicalities aside, the golden rule in modeling is: **build a basic model as fast as you can and move from there**. You can only improve what you already have! Furthermore, the usual experience from data scientists is that the [Pareto principle](https://simplystatistics.org/2014/03/20/the-8020-rule-of-statistical-methods-development/) applies here: you can achieve 80% of the final results with 20% of the effort.
+[semiparametric](https://en.wikipedia.org/wiki/Semiparametric_model), [bayesian](https://en.wikipedia.org/wiki/Bayesian_statistics) *et al*. Technicalities aside, the golden rule in modeling is: **build a basic model as fast as you can and move from there**. You can only improve what you already have! Furthermore, the usual experience from data scientists is that the [Pareto principle](https://simplystatistics.org/2014/03/20/the-8020-rule-of-statistical-methods-development/) applies here: you can achieve 80% of the final results with 20% of the effort.
 
 Now we are good to go. **Where is the data?**
 
