@@ -100,7 +100,8 @@ Again, having a data table at the end, you can still apply all those techniques 
 
 > *To do*.
 
-###
+
+As a final advice on feature engineering: really take care of your data! You will always find a way to optimize a model with the data you have, if your data does not represent the phenomenon you are interested, you will end up with an awesome [GIGO](https://en.wikipedia.org/wiki/Garbage_in,_garbage_out) model. Other point to keep in mind, sometimes a different representation of your dataset can lead to interesting ideas, here are some examples: [texts as images](https://arxiv.org/pdf/1802.06007.pdf); [logs as images](https://www.splunk.com/blog/2017/04/18/deep-learning-with-splunk-and-tensorflow-for-security-catching-the-fraudster-in-neural-networks-with-behavioral-biometrics.html), [time-series as graphs](https://www.nature.com/articles/srep15508). Be creative!
 
 ## Modeling
 
